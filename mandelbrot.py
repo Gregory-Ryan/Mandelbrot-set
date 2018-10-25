@@ -1,9 +1,9 @@
 import cf
 import turtle
 
-mode = int(input('mode(1,2,3,4): '))
-sacle = int(input('Scale: ')) // 2
-iter = int(input('Iterations: '))
+mode = int(input('mode(1,2,3,4): '))  
+sacle = int(input('Scale: ')) // 2 #Divided by two because the MB is contained within a radius of 2 from the origin 
+itera = int(input('Iterations: '))
 
 
 wn = turtle.Screen()
@@ -18,7 +18,7 @@ for x in range(-2 * sacle, 2 * sacle) :
     for y in range(-2 * sacle, 2 * sacle) :
         z = cf.I(x/sacle,y/sacle)
         z1 = cf.I(x/sacle,y/sacle)
-        for i in range(0, iter) :
+        for i in range(0, itera) :
             z1 = cf.sqr(z1)
             z1 = cf.add(z1,z)
             m = cf.mod(z1)
@@ -29,18 +29,17 @@ for x in range(-2 * sacle, 2 * sacle) :
             com.penup()
             com.setpos(cf.Re(z) * sacle,cf.Im(z) * sacle)
             com.pendown()
-            hue = int(255 - 255 * i / iter)
+            hue = int(255 - 255 * i / itera)
             if hue != 255 :
                 com.dot(3, (hue,255,255))
         if mode == 2 :
             #Colored based on the size of the norm after a number of iteration(Darker is larger)
-            if m <= 2 :
+            if m < 2 :
                 com.penup()
                 com.setpos(cf.Re(z) * sacle,cf.Im(z) * sacle)
                 com.pendown()
                 hue = int(255 - 255 * m / 2)
-                if hue != 255 :
-                    com.dot(3, (hue,255,255))
+                com.dot(3, (hue,255,255))
         if mode == 3 :
             #Colored in black and white
             if m <= 2 :
