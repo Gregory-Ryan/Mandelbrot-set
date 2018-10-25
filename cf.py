@@ -355,3 +355,18 @@ def coth(z) :
     u = tan(z)
     z1 = div(1,u)
     return z1
+
+def zeta(z) :
+    #Calculates the Riemann zeta function (Re(z) >= 1)
+    #The input is a string in the form x + yi
+    #The output is a string in the form x + yi
+    if Re(z) >= 1 :
+        z1 = power(1,neg(z))
+        for i in range(2,500) :
+            z2 = power(i,neg(z))
+            z1 = add(z1,z2)
+            z3 = power(int(i + 1),neg(z))
+            z4 = add(z1,z3)
+            if mod(subt(z4,multi(0.00000999,z4))) <= mod(z1) <= mod(add(z4,multi(0.00000999,z4)))   :
+                return z1 
+        return math.inf
