@@ -4,7 +4,7 @@ import turtle
 Re = float(input('Re(z)= '))
 Im = float(input('Im(z)= '))
 mode = int(input('Mode(1,2,3,4): '))
-sacle = int(input('Scale: '))
+sacle = int(input('Scale: ')) // 2
 iter = int(input('Iterations: '))
 
 
