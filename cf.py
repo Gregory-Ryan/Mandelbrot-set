@@ -9,13 +9,17 @@ def I(x,y) :
     elif x == 0 :
         if y == 1 :
             z = 'i'
+        elif y == -1 :
+            z = '-i'
         else :
             z = str(y) + 'i'
     else : 
         if y == 1 :
             z = str(x) + " " + "+" + " " + 'i'
+        elif y == -1 :
+            z = str(x) + " " + "+" + " " + '-i'
         else :
-            z =  str(x) + " " + "+" + " " + str(y) + 'i'
+            z = str(x) + " " + "+" + " " + str(y) + 'i'
     return z
 
 def conj(x,y) :
@@ -26,14 +30,21 @@ def conj(x,y) :
         z = str(x)
     elif x == 0 :
         if y == 1 :
+            z = '-i'
+        elif y == -1 :
             z = 'i'
         else :
-            z = str(y) + 'i'
+            z = '-' + str(y) + 'i'
     else :
         if y == 1 :
-            z = str(x) + " " + "-" + " " + 'i'
+            z = str(x) + " " + "" + " " + '-i'
+        elif y == -1 :
+            z = str(x) + " " + "" + " " + 'i'
         else :
-            z =  str(x) + " " + "-" + " " + str(y) + 'i'
+            if y[0,1] == '-' :
+                z = str(x) + " " + "+" + " " + str(y) + 'i'
+            else:
+                z = str(x) + " " + "+" + " " + "-" + str(y) + 'i'
     return z
 
 def Re(z) :
@@ -73,16 +84,28 @@ def Im(z) :
                     sr2 = sr[count + 1 : len(sr) - 1]
                     if sr2 == ' ' :
                         fin = 1
+                    elif sr2 == '-' :
+                        fin = -1
                     else :
                         fin = float(sr2)
                     return fin
         sr22 = sr[0 : len(sr) - 1]
         if sr22 == '' :
             return float(1)
+        elif sr22 == '-' :
+            return float(-1)
         else :
             return float(sr22)
     else :
         return 0
+
+def neg(z) :
+    #Makes the complex number negitive
+    #The input is a string in the form x + yi
+    x = Re(z)
+    y = Im(z)
+    z1 = I(-x,-y)
+    return z1
     
 def add(z,z1) :
     #Adds two complex numbers
