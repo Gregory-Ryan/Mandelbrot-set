@@ -225,7 +225,9 @@ def power(z,p) :
     #Puts a complex number to the power of a number(it can be complex)
     #z is a string in the form x + yi and p is the power(it can be complex)
     #The output is a string in the form x + yi
-    r = mod(z) ** p
+    x = Re(p)
+    y = Im(p)
+    r = multi(mod(z) ** x, eul_c(1,y * math.log(mod(z)))) 
     t = Arg(z)
     pow = multi(t,p)
     z1 = eul_c(r, pow)
