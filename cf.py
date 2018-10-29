@@ -356,17 +356,45 @@ def coth(z) :
     z1 = div(1,u)
     return z1
 
+def gamma(z) :
+    #Calculates the Gamma Function
+    #The input is a string in the form x + yi
+    #The output is a string in the form x + yi
+    z1 = multi(div(1, z), div(power(2, z), add(1, z)))
+    for i in range(2,10000) :
+            z2 = div(power((1 + 1 / i), z), add(1, div(z, i)))
+            z1 = multi(z1, z2)
+            z3 = div(power((1 + 1 / (i + 1)), z), add(1, div(z, i + 1)))
+            z4 = multi(z1, z3)
+            if mod(subt(z4,multi(0.0000000999,z4))) <= mod(z1) <= mod(add(z4,multi(0.0000000999,z4)))   :
+                return z1
+    return math.inf
+
 def zeta(z) :
-    #Calculates the Riemann zeta function (Re(z) >= 1)
+    #Calculates the Riemann zeta function 
     #The input is a string in the form x + yi
     #The output is a string in the form x + yi
     if Re(z) >= 1 :
         z1 = power(1,neg(z))
-        for i in range(2,500) :
+        for i in range(2,1000000) :
             z2 = power(i,neg(z))
             z1 = add(z1,z2)
             z3 = power(int(i + 1),neg(z))
             z4 = add(z1,z3)
-            if mod(subt(z4,multi(0.00000999,z4))) <= mod(z1) <= mod(add(z4,multi(0.00000999,z4)))   :
-                return z1 
+            if mod(subt(z4,multi(0.00000000999,z4))) <= mod(z1) <= mod(add(z4,multi(0.00000000999,z4)))   :
+                return z4 
         return math.inf
+    elif Re(z) >= 0 :
+        z1 = power(1,neg(z))
+        for i in range(2,100000) :
+            z2 = multi((-1) ** (i - 1), power(i,neg(z)))
+            z1 = add(z1,z2)
+            z3 = multi((-1) ** i, power(int(i + 1),neg(z)))
+            z4 = add(z1,z3)
+            if mod(subt(z4,multi(0.00999,z4))) <= mod(z1) <= mod(add(z4,multi(0.00999,z4)))   :
+                return div(z4,subt(1, power(2, subt(1, z)))) 
+        return math.inf
+    if Re(z) < 0 :
+        z1 = multi(multi(power(math.pi, subt(z, 0.5)), div(gamma(div(subt(1, z), 2)), gamma(div(z,2)))), zeta(subt(1, z))) 
+        return z1
+
