@@ -455,3 +455,4 @@ def polygamma(n) :
     z3 = H_n(n - 1) - z1
     return z3
     
+euler_c = - polygamma(1)
