@@ -398,3 +398,60 @@ def zeta(z) :
         z1 = multi(multi(power(math.pi, subt(z, 0.5)), div(gamma(div(subt(1, z), 2)), gamma(div(z,2)))), zeta(subt(1, z))) 
         return z1
 
+def eta(z) :
+    #Calculates the Dirichlet Eta Function
+    #The input is a string in the form x + yi
+    #The output is a string in the form x + yi
+    if Re(z) >= 1 :
+        z1 = power(1,neg(z))
+        for i in range(2,1000000) :
+            z2 = power(i,neg(z))
+            z1 = add(z1,z2)
+            z3 = power(int(i + 1),neg(z))
+            z4 = add(z1,z3)
+            if mod(subt(z4,multi(0.00000000999,z4))) <= mod(z1) <= mod(add(z4,multi(0.00000000999,z4)))   :
+                return multi(z4,subt(1, power(2, subt(1, z))))
+        return math.inf
+    elif Re(z) >= 0 :
+        z1 = power(1,neg(z))
+        for i in range(2,100000) :
+            z2 = multi((-1) ** (i - 1), power(i,neg(z)))
+            z1 = add(z1,z2)
+            z3 = multi((-1) ** i, power(int(i + 1),neg(z)))
+            z4 = add(z1,z3)
+            if mod(subt(z4,multi(0.00999,z4))) <= mod(z1) <= mod(add(z4,multi(0.00999,z4)))   :
+                return z4
+        return math.inf
+    if Re(z) < 0 :
+        z1 = multi(multi(power(math.pi, subt(z, 0.5)), div(gamma(div(subt(1, z), 2)), gamma(div(z,2)))), zeta(subt(1, z))) 
+        return multi(z1,subt(1, power(2, subt(1, z))))
+
+def F(z,n) :
+    #Calculates the Polylogarithm function
+    z1 = div(z,power(1,n))
+    for i in range(2,1000000) :
+        z2 = div(power(z,i),power(i,n))
+        z1 = add(z1,z2)
+        z3 = div(power(z, i + 1), power(int(i + 1),n))
+        z4 = add(z1,z3)
+        if mod(subt(z4,multi(0.00000000999,z4))) <= mod(z1) <= mod(add(z4,multi(0.00000000999,z4)))   :
+            return z4 
+    return math.inf
+
+def H_n(n) :
+    #Calculates the Hermonic Series the nth term
+    z1 = 1
+    for i in range(2, n + 1) :
+        z2 = 1 / i
+        z1 = z1 + z2
+    return z1
+    
+def polygamma(n) :
+    #Calculates the polygamma function (Only real int)
+    z1 = 1
+    for i in range(2,1000000) :
+        z2 = 1 / i - math.log(1 + (1 / i))
+        z1 = z1 + z2
+    z3 = H_n(n - 1) - z1
+    return z3
+    
