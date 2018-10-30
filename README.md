@@ -64,11 +64,11 @@ cf.eul_c(r,z)
 Takes a input in the form of (r,z) and returns a complex number in the form of x + yi. (r*e**(z*i))
 The input is two strings and it returns a string.
 
-power(z,p)
+cf.power(z,p)
 Returns the complex number to the power of complex number in the form of x + yi. (z ** p)
 The input is two strings and it returns a string.
 
-div(z,z1)
+cf.div(z,z1)
 Returns the a complex number divied by complex number in the form of x + yi. 
 The input is two strings and it returns a string.
 
