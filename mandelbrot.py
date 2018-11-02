@@ -21,7 +21,7 @@ for x in range(-2 * sacle, 2 * sacle) :
         for i in range(0, itera) :
             z1 = cf.sqr(z1)
             z1 = cf.add(z1,z)
-            m = float(cf.mod(z1))
+            m = cf.mod(z1)
             if m > 2 :
                 break
         if mode == 1 :
@@ -29,7 +29,7 @@ for x in range(-2 * sacle, 2 * sacle) :
             com.penup()
             com.setpos(float(cf.Re(z) * sacle),float(cf.Im(z) * sacle))
             com.pendown()
-            hue = int(255 - 255 * i / itera))
+            hue = int(255 - 255 * i / itera)
             if hue != 255 :
                 com.dot(3, (hue,255,255))
         if mode == 2 :
