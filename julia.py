@@ -29,7 +29,7 @@ for x in range(-2 * sacle, 2 * sacle) :
         if mode == 1 :
             #Coloured based on how long the iterates stay less than two(darker is longer)
             com.penup()
-            com.setpos(cf.Re(z) * sacle,cf.Im(z) * sacle)
+            com.setpos(float(cf.Re(z) * sacle),float(cf.Im(z) * sacle))
             com.pendown()
             hue = int(255 - 255 * i / itera)
             if hue != 255 :
@@ -38,7 +38,7 @@ for x in range(-2 * sacle, 2 * sacle) :
             #Colored based on the size of the norm after a number of iteration(Darker is larger)
             if m < 2 :
                 com.penup()
-                com.setpos(cf.Re(z) * sacle,cf.Im(z) * sacle)
+                com.setpos(float(cf.Re(z) * sacle),float(cf.Im(z) * sacle))
                 com.pendown()
                 hue = int(255 - 255 * m / 2)
                 com.dot(3, (hue,255,255))
@@ -46,59 +46,59 @@ for x in range(-2 * sacle, 2 * sacle) :
             #Colored in black and white
             if m <= 2 :
                 com.penup()
-                com.setpos(cf.Re(z) * sacle,cf.Im(z) * sacle)
+                com.setpos(float(cf.Re(z) * sacle),float(cf.Im(z) * sacle))
                 com.pendown()
                 com.dot(3, 'black')
         if mode == 4 :
             #Coloured based on the relative size of the norm(Darker is larger) 
             if m <= 0.2 :
                 com.penup()
-                com.setpos(cf.Re(z) * sacle,cf.Im(z) * sacle)
+                com.setpos(float(cf.Re(z) * sacle),float(cf.Im(z) * sacle))
                 com.pendown()
                 com.dot(3, 'pale turquoise')
             elif m <= 0.4 :
                 com.penup()
-                com.setpos(cf.Re(z) * sacle,cf.Im(z) * sacle)
+                com.setpos(float(cf.Re(z) * sacle),float(cf.Im(z) * sacle))
                 com.pendown()
                 com.dot(3, 'sky blue')
             elif m <= 0.6 :
                 com.penup()
-                com.setpos(cf.Re(z) * sacle,cf.Im(z) * sacle)
+                com.setpos(float(cf.Re(z) * sacle),float(cf.Im(z) * sacle))
                 com.pendown()
                 com.dot(3, 'cyan2')
             elif m <= 0.8 :
                 com.penup()
-                com.setpos(cf.Re(z) * sacle,cf.Im(z) * sacle)
+                com.setpos(float(cf.Re(z) * sacle),float(cf.Im(z) * sacle))
                 com.pendown()
                 com.dot(3, 'aquamarine')
             elif m <= 1 :
                 com.penup()
-                com.setpos(cf.Re(z) * sacle,cf.Im(z) * sacle)
+                com.setpos(float(cf.Re(z) * sacle),float(cf.Im(z) * sacle))
                 com.pendown()
                 com.dot(3, 'aquamarine2')
             elif m <= 1.2 :
                 com.penup()
-                com.setpos(cf.Re(z) * sacle,cf.Im(z) * sacle)
+                com.setpos(float(cf.Re(z) * sacle),float(cf.Im(z) * sacle))
                 com.pendown()
                 com.dot(3, 'SeaGreen1')
             elif m <= 1.4 :
                 com.penup()
-                com.setpos(cf.Re(z) * sacle,cf.Im(z) * sacle)
+                com.setpos(float(cf.Re(z) * sacle),float(cf.Im(z) * sacle))
                 com.pendown()
                 com.dot(3, 'SeaGreen2')
             elif m <= 1.6 :
                 com.penup()
-                com.setpos(cf.Re(z) * sacle,cf.Im(z) * sacle)
+                com.setpos(float(cf.Re(z) * sacle),float(cf.Im(z) * sacle))
                 com.pendown()
                 com.dot(3, 'SeaGreen3')
             elif m <= 1.8 :
                 com.penup()
-                com.setpos(cf.Re(z) * sacle,cf.Im(z) * sacle)
+                com.setpos(float(cf.Re(z) * sacle),float(cf.Im(z) * sacle))
                 com.pendown()
                 com.dot(3, 'medium sea green')
             elif m < 2 :
                 com.penup()
-                com.setpos(cf.Re(z) * sacle,cf.Im(z) * sacle)
+                com.setpos(float(cf.Re(z) * sacle),float(cf.Im(z) * sacle))
                 com.pendown()
                 com.dot(3, 'sea green')
     turtle.update()
