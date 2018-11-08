@@ -202,3 +202,7 @@ Returns the polygamma function of a real number. The input is a integer and the 
 
 # cf.euler_c
 The Euler-Mascheroni constant.
+
+# cf.pi(n)
+Returns the Prime Counting function of a number.
+The input is a positive integer and it returns integer.
