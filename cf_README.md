@@ -1,43 +1,44 @@
-## Arithmetic
-# cf.add(z,z1)
+# Arithmetic
+## cf.add(z,z1)
 Returns the addition of two complex numbers in the form of (Re,Im).
 The input is two tuples and it returns a tuple.
-# cf.conj(x,y)
+## cf.conj(x,y)
 Takes the Real(x) and Imaginary(y) parts of a complex number and puts it in the form of x + -yi. 
 The input is two Decimals and it returns a tuple.
-# cf.conj_s(x,y)
+## cf.conj_s(x,y)
 Takes the Real(x) and Imaginary(y) parts of a complex number and puts it in the form of x + -yi. 
 The input is two Decimals and it returns a string.
-# cf.I(x,y)
+## cf.I(x,y)
 Takes the Real(x) and Imaginary(y) parts of a complex number and puts it in the form of (Re,Im). 
 The input is two Decimals and it returns a tuple.
-# cf.Im(z)
+## cf.Im(z)
 Returns the Imaginary part of a complex number.
 The input is a tuple and it returns a Decimal.
-# cf.Im_s(z)
+## cf.Im_s(z)
 Returns the Imaginary part of a complex number.
 The input is a string and it returns a Decimal.
-# cf.I_s(x,y)
+## cf.I_s(x,y)
 Takes the Real(x) and Imaginary(y) parts of a complex number and puts it in the form of x + yi. 
 The input is two Decimals and it returns a string.
-# cf.multi(z,z1)
+## cf.multi(z,z1)
 Returns the product of two complex numbers in the form of (Re,Im). 
 The input is two tuples and it returns a tuple.
-# cf.neg(z)
+## cf.neg(z)
 Returns the negative of a complex number in the form of -x + -yi.
 The input is a tuple and it returns a tuple.
-# cf.Re(z)
+## cf.Re(z)
 Returns the Real part of a complex number.
 The input is a tuple and it returns a Decimal.
-# cf.Re_s(z)
+## cf.Re_s(z)
 Returns the Real part of a complex number.
 The input is a string and it returns a Decimal.
-# cf.sqr(z)
+## cf.sqr(z)
 Returns the square of a complex number in the form of (Re,Im). 
 The input is a tuple and it returns a tuple.
-# cf.subt(z,z1)
+## cf.subt(z,z1)
 Returns the subtraction of two complex numbers in the form of (Re,Im). (z - z1)
 The input is two tuples and it returns a tuple.
+
 
 # cf.Arg(z)
 Returns the principal argument of a complex number in radians. 
