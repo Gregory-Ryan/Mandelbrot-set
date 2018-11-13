@@ -1,8 +1,10 @@
 import cf
 import turtle
 
-mode = int(input('mode(1,2,3,4): '))  
-sacle = int(input('Scale: ')) // 2 #Divided by two because the MB is contained within a radius of 2 from the origin 
+Re = float(input('Re(z)= '))
+Im = float(input('Im(z)= '))
+mode = int(input('Mode(1,2,3,4): '))
+sacle = int(input('Scale: ')) // 2 
 itera = int(input('Iterations: '))
 
 
@@ -13,14 +15,14 @@ com = turtle.Turtle()
 com.speed(0)
 com.hideturtle()
 
-
 for x in range(-2 * sacle, 2 * sacle) :
     for y in range(-2 * sacle, 2 * sacle) :
+        c = (Re,Im)
         z = (x/sacle,y/sacle)
         z1 = (x/sacle,y/sacle)
         for i in range(0, itera) :
             z1 = cf.sqr(z1)
-            z1 = cf.add(z1,z)
+            z1 = cf.add(z1,c)
             m = cf.mod(z1)
             if m > 2 :
                 break
