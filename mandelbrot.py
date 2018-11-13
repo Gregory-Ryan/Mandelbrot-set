@@ -16,8 +16,8 @@ com.hideturtle()
 
 for x in range(-2 * sacle, 2 * sacle) :
     for y in range(-2 * sacle, 2 * sacle) :
-        z = cf.I(x/sacle,y/sacle)
-        z1 = cf.I(x/sacle,y/sacle)
+        z = (x/sacle,y/sacle)
+        z1 = (x/sacle,y/sacle)
         for i in range(0, itera) :
             z1 = cf.sqr(z1)
             z1 = cf.add(z1,z)
@@ -100,5 +100,3 @@ for x in range(-2 * sacle, 2 * sacle) :
                 com.pendown()
                 com.dot(3, 'sea green')
     turtle.update()
-
-
