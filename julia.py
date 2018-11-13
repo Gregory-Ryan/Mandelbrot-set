@@ -4,7 +4,7 @@ import turtle
 Re = float(input('Re(z)= '))
 Im = float(input('Im(z)= '))
 mode = int(input('Mode(1,2,3,4): '))
-sacle = int(input('Scale: ')) // 2
+sacle = int(input('Scale: ')) // 2 
 itera = int(input('Iterations: '))
 
 
@@ -17,9 +17,9 @@ com.hideturtle()
 
 for x in range(-2 * sacle, 2 * sacle) :
     for y in range(-2 * sacle, 2 * sacle) :
-        c = cf.I(Re,Im)
-        z = cf.I(x/sacle,y/sacle)
-        z1 = cf.I(x/sacle,y/sacle)
+        c = (Re,Im)
+        z = (x/sacle,y/sacle)
+        z1 = (x/sacle,y/sacle)
         for i in range(0, itera) :
             z1 = cf.sqr(z1)
             z1 = cf.add(z1,c)
@@ -38,7 +38,7 @@ for x in range(-2 * sacle, 2 * sacle) :
             #Colored based on the size of the norm after a number of iteration(Darker is larger)
             if m < 2 :
                 com.penup()
-                com.setpos(float(cf.Re(z) * sacle),float(cf.Im(z) * sacle))
+                com.setpos(cf.Re(z) * sacle,cf.Im(z) * sacle)
                 com.pendown()
                 hue = int(255 - 255 * m / 2)
                 com.dot(3, (hue,255,255))
@@ -46,59 +46,59 @@ for x in range(-2 * sacle, 2 * sacle) :
             #Colored in black and white
             if m <= 2 :
                 com.penup()
-                com.setpos(float(cf.Re(z) * sacle),float(cf.Im(z) * sacle))
+                com.setpos(cf.Re(z) * sacle,cf.Im(z) * sacle)
                 com.pendown()
                 com.dot(3, 'black')
         if mode == 4 :
             #Coloured based on the relative size of the norm(Darker is larger) 
             if m <= 0.2 :
                 com.penup()
-                com.setpos(float(cf.Re(z) * sacle),float(cf.Im(z) * sacle))
+                com.setpos(cf.Re(z) * sacle,cf.Im(z) * sacle)
                 com.pendown()
                 com.dot(3, 'pale turquoise')
             elif m <= 0.4 :
                 com.penup()
-                com.setpos(float(cf.Re(z) * sacle),float(cf.Im(z) * sacle))
+                com.setpos(cf.Re(z) * sacle,cf.Im(z) * sacle)
                 com.pendown()
                 com.dot(3, 'sky blue')
             elif m <= 0.6 :
                 com.penup()
-                com.setpos(float(cf.Re(z) * sacle),float(cf.Im(z) * sacle))
+                com.setpos(cf.Re(z) * sacle,cf.Im(z) * sacle)
                 com.pendown()
                 com.dot(3, 'cyan2')
             elif m <= 0.8 :
                 com.penup()
-                com.setpos(float(cf.Re(z) * sacle),float(cf.Im(z) * sacle))
+                com.setpos(cf.Re(z) * sacle,cf.Im(z) * sacle)
                 com.pendown()
                 com.dot(3, 'aquamarine')
             elif m <= 1 :
                 com.penup()
-                com.setpos(float(cf.Re(z) * sacle),float(cf.Im(z) * sacle))
+                com.setpos(cf.Re(z) * sacle,cf.Im(z) * sacle)
                 com.pendown()
                 com.dot(3, 'aquamarine2')
             elif m <= 1.2 :
                 com.penup()
-                com.setpos(float(cf.Re(z) * sacle),float(cf.Im(z) * sacle))
+                com.setpos(cf.Re(z) * sacle,cf.Im(z) * sacle)
                 com.pendown()
                 com.dot(3, 'SeaGreen1')
             elif m <= 1.4 :
                 com.penup()
-                com.setpos(float(cf.Re(z) * sacle),float(cf.Im(z) * sacle))
+                com.setpos(cf.Re(z) * sacle,cf.Im(z) * sacle)
                 com.pendown()
                 com.dot(3, 'SeaGreen2')
             elif m <= 1.6 :
                 com.penup()
-                com.setpos(float(cf.Re(z) * sacle),float(cf.Im(z) * sacle))
+                com.setpos(cf.Re(z) * sacle,cf.Im(z) * sacle)
                 com.pendown()
                 com.dot(3, 'SeaGreen3')
             elif m <= 1.8 :
                 com.penup()
-                com.setpos(float(cf.Re(z) * sacle),float(cf.Im(z) * sacle))
+                com.setpos(cf.Re(z) * sacle,cf.Im(z) * sacle)
                 com.pendown()
                 com.dot(3, 'medium sea green')
             elif m < 2 :
                 com.penup()
-                com.setpos(float(cf.Re(z) * sacle),float(cf.Im(z) * sacle))
+                com.setpos(cf.Re(z) * sacle,cf.Im(z) * sacle)
                 com.pendown()
                 com.dot(3, 'sea green')
     turtle.update()
